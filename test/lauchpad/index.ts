@@ -2,9 +2,9 @@ import { JsonRpcProvider, RawSigner, Ed25519Keypair, Connection } from "@mysten/
 import { SeaPadInput } from "../../src/lauchpad/seapad-input";
 import { SeaPadAdapter } from "../../src/lauchpad/seapad-adapter";
 
-const PACKAGE_OBJECT_ID = "" //change seapad packageObjectId in here
-const MODULE = ""   //change seapad module in here
-const COIN = "0x2:sui:SUI"   //change your coin in here
+const PACKAGE_OBJECT_ID = "0x8b519e3ef4c7a4d21c82672d3bc30e407eece1db" //change seapad packageObjectId in here
+const MODULE = "0000000000000000000000000000000000000002::coin;"   //change seapad module in here
+const COIN = "<0x991cfe7d3e770bd74c808135dd8f5f81b193191b::beetle::BEETLE>"   //change your coin in here
 
 export async function test(): Promise<any> {
     try {
@@ -32,9 +32,9 @@ export async function test(): Promise<any> {
         console.log(`BE call add_whitelist`, await seaPadAdapter.addWhitelist({
             COIN: COIN
         }, {
-            admin_cap: "",//enter input
-            project: "",//enter input
-            user: ""//enter input
+            admin_cap: "0xe93048d2fe38bd8545a50e2fe46b8241827a5baf",//enter input
+            project: "0xe93048d2fe38bd8545a50e2fe46b8241827a5baf",//enter input
+            user: "0xe93048d2fe38bd8545a50e2fe46b8241827a5baf"//enter input
         }))
 
     } catch (error) {
